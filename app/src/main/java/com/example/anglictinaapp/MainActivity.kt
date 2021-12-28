@@ -3,6 +3,8 @@ package com.example.anglictinaapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -46,9 +48,57 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //  nastavenie menu z moje_menu.xml
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.moje_menu,menu)
+        return true
+    }
+
+//      po stlaceni polozky z ActionBaru sa vykoná nejaké zotriedenie
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.menu_slovo_vzostupne -> {
+                val stdList = sqliteHelper.getAllStudents()
+                adapter?.addItems(stdList)
+                stdList.sortBy {
+                    it.name
+                }
+                Toast.makeText(this,getString(R.string.zotriedenieSlovaA_Z),Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.menu_slovo_zostupne -> {
+                val stdList = sqliteHelper.getAllStudents()
+                adapter?.addItems(stdList)
+                stdList.sortByDescending {
+                    it.name
+                }
+                Toast.makeText(this,getString(R.string.zotriedenieSlovaZ_A),Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.menu_preklad_vzostupne -> {
+                val stdList = sqliteHelper.getAllStudents()
+                adapter?.addItems(stdList)
+                stdList.sortBy {
+                    it.email
+                }
+                Toast.makeText(this,getString(R.string.zotriedeniePrekladuA_Z), Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.menu_preklad_zostupne -> {
+                val stdList = sqliteHelper.getAllStudents()
+                adapter?.addItems(stdList)
+                stdList.sortByDescending {
+                    it.email
+                }
+                Toast.makeText(this,getString(R.string.zotriedeniePrekladuZ_A), Toast.LENGTH_SHORT).show()
+                return true
+            }else ->super.onOptionsItemSelected(item)
+        }
+
+    }
+
     private fun getStudents() {
         val stdList = sqliteHelper.getAllStudents()
-        Log.e("pppp", "${stdList.size}")
         adapter?.addItems(stdList)
         stdList.sortBy {
             it.name

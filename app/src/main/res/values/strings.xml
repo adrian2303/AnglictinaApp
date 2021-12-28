@@ -21,4 +21,12 @@
     <string name="setPositiveVymazanieSlova">Áno</string>
     <string name="setNegativeVymazanieSlova">Nie</string>
     <string name="toastInformacieOAplikacii">Copyright 2022, Adrián Hamada</string>
+    <string name="menu_slovo_vzostupne">Zoradiť podľa slov vzostupne</string>
+    <string name="menu_slovo_zostupne">Zoradiť podľa slov zostupne</string>
+    <string name="menu_preklad_vzostupne">Zoradiť podľa prekladu vzostupne</string>
+    <string name="menu_preklad_zostupne">Zoradiť podľa prekladu zostupne</string>
+    <string name="zotriedenieSlovaA_Z">Ty si klikol zotriedenie podľa slova vzostupne</string>
+    <string name="zotriedenieSlovaZ_A">Ty si klikol zotriedenie podľa slova zostupne</string>
+    <string name="zotriedeniePrekladuA_Z">Ty si klikol zotriedenie podľa prekladu vzostupne</string>
+    <string name="zotriedeniePrekladuZ_A">Ty si klikol zotriedenie podľa prekladu zostupne</string>
 </resources>

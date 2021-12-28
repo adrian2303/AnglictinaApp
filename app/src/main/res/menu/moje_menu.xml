@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_slovo_vzostupne"
+        android:title="@string/menu_slovo_vzostupne"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_slovo_zostupne"
+        android:title="@string/menu_slovo_zostupne"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_preklad_vzostupne"
+        android:title="@string/menu_preklad_vzostupne"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_preklad_zostupne"
+        android:title="@string/menu_preklad_zostupne"
+        app:showAsAction="never"/>
+
+
+</menu>
