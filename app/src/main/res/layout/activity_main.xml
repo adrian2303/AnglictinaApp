@@ -14,7 +14,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         android:gravity="center_vertical"
-        android:text="Anglický slovník"
+        android:text="@string/tlacidlo_upravy"
         android:textSize="20sp"/>
 
     <EditText
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Enter name" />
+        android:hint="@string/hint_slovo" />
 
     <EditText
         android:id="@+id/edEmail"
@@ -31,7 +31,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:hint="Enter Email" />
+        android:hint="@string/hint_preklad" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"
+            android:text="@string/tlacidlo_pridaj"
             android:textAllCaps="false"/>
 
         <Button
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="View"
+            android:text="@string/tlacidlo_zobraz"
             android:textAllCaps="false"/>
 
         <Button
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Update"
+            android:text="@string/tlacidlo_uprav"
             android:textAllCaps="false"/>
 
     </LinearLayout>

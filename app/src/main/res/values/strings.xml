@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">AnglictinaApp</string>
+    <string name="nazov_uvodna_obrazovka">Angličtina budujeme slovnú zásobu</string>
+    <string name="tlacidlo_slovnik">Môj slovník</string>
+    <string name="tlacidlo_upravy">Úprava slovníka</string>
+    <string name="tlacidlo_informacne">Informácie o aplikácií</string>
+    <string name="tlacidlo_pridaj">Pridaj</string>
+    <string name="tlacidlo_zobraz">Zobraz</string>
+    <string name="tlacidlo_uprav">Uprav</string>
+    <string name="tlacidlo_vymaz">Vymaž</string>
+    <string name="hint_slovo">Zadaj slovo v pôvodnom jazyku</string>
+    <string name="hint_preklad">Zadaj preklad slova</string>
+    <string name="prazdneSlovo">Zadaj slovo v pôvodnom jazyku</string>
+    <string name="prazdnyPreklad">Zadaj preklad slova</string>
+    <string name="toastPridania">Slovo bolo pridané do slovníka</string>
+    <string name="toastNepridania">Slovo sa nepridalo do slovníka!</string>
+    <string name="toastNezmenene">Slovo zo slovníka nebolo zmenené!</string>
+    <string name="toastZmenene">Slovo zo slovníka sa zmenilo</string>
+    <string name="toastProblemPridanie">Nastal problém s pridaním slova!</string>
+    <string name="setMessageVymazanieSlova">Ste si istý, že chcete vymazať dané slovo?</string>
+    <string name="setPositiveVymazanieSlova">Áno</string>
+    <string name="setNegativeVymazanieSlova">Nie</string>
+    <string name="toastInformacieOAplikacii">Copyright 2022, Adrián Hamada</string>
 </resources>

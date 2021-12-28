@@ -50,24 +50,31 @@ class MainActivity : AppCompatActivity() {
         val stdList = sqliteHelper.getAllStudents()
         Log.e("pppp", "${stdList.size}")
         adapter?.addItems(stdList)
+        stdList.sortBy {
+            it.name
+        }
     }
 
     private fun addStudent() {
         val name = edName.text.toString()
         val email = edEmail.text.toString()
 
-        if (name.isEmpty()  || email.isEmpty()) {
-            Toast.makeText(this, "Please eneter required field ", Toast.LENGTH_SHORT).show()
+        if (name.isEmpty()) {
+            edName.error = getString(R.string.prazdneSlovo)
+        }else if (email.isEmpty()){
+            edEmail.error = getString(R.string.prazdnyPreklad)
+//        if (name.isEmpty()  || email.isEmpty()) {
+//            Toast.makeText(this, "Please eneter required field ", Toast.LENGTH_SHORT).show()
         }else {
             val std = StudentModel(name = name, email = email)
             val status = sqliteHelper.insertStudent(std)
             //Kontrola vlozenia zaznamu
             if (status > -1) {
-                Toast.makeText(this, "Student Added...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toastPridania), Toast.LENGTH_SHORT).show()
                 clearEditText()
                 getStudents()
             } else {
-                Toast.makeText(this, "Record not saved", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toastNepridania), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -78,7 +85,7 @@ class MainActivity : AppCompatActivity() {
 
 //      kontrola ci nebol zaznam zmeneny
         if (name == std?.name && email == std?.email){
-            Toast.makeText(this,"Record not changed..", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,getString(R.string.toastNezmenene), Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -87,23 +94,24 @@ class MainActivity : AppCompatActivity() {
         val std = StudentModel(id = std!!.id, name = name, email = email)
         val status = sqliteHelper.updateStudent(std)
         if (status > -1) {
+            Toast.makeText(this, getString(R.string.toastZmenene), Toast.LENGTH_SHORT).show()
             clearEditText()
             getStudents()
         }else{
-            Toast.makeText(this,"Update failed",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toastProblemPridanie),Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun deleteStudent(id:Int){
         val builder = AlertDialog.Builder(this)
-        builder.setMessage("Are you sure you want to delete item?")
+        builder.setMessage(getString(R.string.setMessageVymazanieSlova))
         builder.setCancelable(true)
-        builder.setPositiveButton("Yes") {dialog, _ ->
+        builder.setPositiveButton(getString(R.string.setPositiveVymazanieSlova)) { dialog, _ ->
             sqliteHelper.deleteStudentById(id)
             getStudents()
             dialog.dismiss()
         }
-        builder.setNegativeButton("No") {dialog, _ ->
+        builder.setNegativeButton(getString(R.string.setNegativeVymazanieSlova)) { dialog, _ ->
             dialog.dismiss()
         }
 

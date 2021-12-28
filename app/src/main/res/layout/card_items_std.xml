@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
-        android:text="Delete"
+        android:text="@string/tlacidlo_vymaz"
         android:textAllCaps="false">
 
     </Button>
